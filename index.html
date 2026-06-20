@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👔 A Tribute to My Hero: Happy Father's Day ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@300;500;700&family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+       img{
+            border-radius: 15px;
+            transition:all 0.4 ease;
+            height: 500px;
+            width: 400px ;
+       }
+       
+       img:hover{
+        transform: scale(1.08); rotate: 2deg;
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6)
+       }
+       
+       
+       :root {
+            --royal-blue: #1a2a6c;
+            --deep-red: #b21f1f;
+            --gold: #fdbb2d;
+            --slate: #2c3e50;
+            --ivory: #f8f9fa;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- Background Particles --- */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #0a192f 0%, #000 100%);
+        }
+
+        /* --- Section Framework --- */
+        .section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .content-box {
+            max-width: 1000px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .section.active .content-box {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Section 1: The Hero's Welcome --- */
+        #sec-1 { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            letter-spacing: 5px;
+            background: linear-gradient(45deg, var(--gold), #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200%;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        .hero-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* --- Section 2: Wisdom Reveal --- */
+        #sec-2 { background: #050505; }
+        .wisdom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .wisdom-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 20px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .wisdom-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.12);
+            border-color: var(--gold);
+        }
+        .wisdom-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .wisdom-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Section 3: The Legacy Letter --- */
+        #sec-3 { background: linear-gradient(to bottom, #050505, #1a1a1a); }
+        .letter-wrap {
+            background: #fffdf5;
+            color: #2c3e50;
+            padding: 60px;
+            border-radius: 5px;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+            text-align: left;
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .letter-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 10px;
+            background: repeating-linear-gradient(45deg, var(--royal-blue), var(--royal-blue) 10px, var(--deep-red) 10px, var(--deep-red) 20px);
+        }
+        .letter-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .letter-sig {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-top: 40px;
+            text-align: right;
+            color: var(--deep-red);
+        }
+
+        /* --- Section 4: Pillars of Strength --- */
+        #sec-4 { background: #1a1a1a; }
+        .pillar-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .pillar {
+            width: 120px;
+            text-align: center;
+        }
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #000;
+            box-shadow: 0 0 20px var(--gold);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--gold); }
+            50% { transform: scale(1.1); box-shadow: 0 0 40px var(--gold); }
+        }
+
+        /* --- Section 5: Health & Longevity Tree --- */
+       
+        }
+
+        /* --- Section 6: Celebration of Joy --- */
+        #sec-6 { background: #050505; }
+        .joy-wall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            font-size: 4rem;
+        }
+        .joy-item {
+            animation: bounce 2s infinite ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        /* --- Section 7: Final Tribute --- */
+        #sec-7 { background: radial-gradient(circle, #1a2a6c, #b21f1f, #fdbb2d); background-size: 400% 400%; animation: bgMove 15s infinite; }
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .final-msg {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* --- Navigation Hint --- */
+        .scroll-hint {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            z-index: 100;
+            animation: hintFade 2s infinite;
+        }
+        @keyframes hintFade {
+            0%, 100% { opacity: 0.2; transform: translate(-50%, 0); }
+            50% { opacity: 0.8; transform: translate(-50%, 10px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .letter-wrap { padding: 30px; margin: 0 10px; }
+            .pillar-container { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="watermark">AB edits</div>
+
+<style>
+.watermark{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: normal;
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+}
+</style>
+
+
+
+<div id="startScreen">
+ <p style="font-family: 'Times New Roman', Times, serif; font-size:32px;"> Tap Anywhere To Open Surprise 🎁<br><br><br>  </p>
+</div>
+
+<div>
+ <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 15px;"> Turn your volume up to 100% <br>  and<br>   Enjoy with music 🎁  <br> </p>  
+
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="father_music.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<style>
+#startScreen{
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 99999;
+    cursor: pointer;
+}
+</style>
+
+<script>
+document.getElementById("startScreen").addEventListener("click", () => {
+    document.getElementById("bgMusic").play();
+    document.getElementById("startScreen").style.display = "none";
+});
+</script>
+
+
+
+
+
+    <canvas id="bg-canvas"></canvas>
+    <div class="scroll-hint">Scroll for the Tribute</div>
+
+    <!-- Section 1: Hero's Welcome -->
+    <section id="sec-1" class="section">
+        <div class="content-box">
+            <h1 class="hero-title">Happy Father's Day</h1>
+            <p class="hero-sub">To My First Hero, My Forever Guide</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Wisdom Reveal -->
+    <section id="sec-2" class="section">
+        <div class="content-box">
+            <h2 style="font-family: 'Cinzel'; font-size: 70px; color: var(--gold);">Lessons from a Legend</h2>
+            <div class="wisdom-grid">
+                <div class="wisdom-card">
+                    <span style="font-size: 50px; display: block; margin-bottom: 15px;">🛡️</span>
+                    <h3>Protection</h3>
+                    <p>The shield that kept our world safe and secure.</p>
+                </div>
+                <div class="wisdom-card">
+                    <span style="font-size: 50px; display: block; margin-bottom: 15px;">🧭</span>
+                    <h3>Guidance</h3>
+                    <p>The compass that pointed us toward the right path.</p>
+                </div>
+                <div class="wisdom-card">
+                    <span style="font-size: 50px; display: block; margin-bottom: 15px;">⚓</span>
+                    <h3>Stability</h3>
+                    <p>The anchor that held us steady in every storm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Legacy Letter -->
+    <section id="sec-3" class="section">
+        <div class="content-box">
+            <div class="letter-wrap">
+                <div class="letter-content">
+                    "Dear Dad,<br><br>
+                    Thank you for being the foundation of our lives. Your strength, your patience, and your unconditional love have shaped who we are today. You've taught us that true greatness lies in kindness and that hard work is the key to any dream. Today, we celebrate you—not just as a father, but as a mentor, a friend, and a hero."
+                </div>
+                <div class="letter-sig">With Eternal Love & Respect</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Pillars of Strength -->
+    <section id="sec-4" class="section">
+        <div class="content-box">
+            <h2 style="font-family: 'Cinzel'; font-size:70px; color: var(--gold);">The Pillars of Our Family</h2>
+            <div class="pillar-container">
+                <div class="pillar">
+                    <div class="pillar-icon">💪</div>
+                    <p>Strength</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🧠</div>
+                    <p>Wisdom</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">❤️</div>
+                    <p>Love</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">⚖️</div>
+                    <p>Integrity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Health & Longevity -->
+    <section id="sec-5" class="section">
+        <div class="content-box">
+            <h2 style="font-family: 'Dancing Script'; font-size: 60px; color: #4caf50;">A Prayer for Long Life</h2>
+            <p style="font-size: 40px; margin-top: 15px;">May you always be as strong and vibrant as a mighty oak.</p><br><br>
+            <div class="img"><img src="father.jpeg"></div>
+              <br>  
+            <p style="font-family: 'Playfair Display'; font-size:40px;font-style:  italic; margin-top: 20px;">Health, Happiness, and Infinite Peace.</p>
+        </div>
+    </section>
+
+    <!-- Section 6: Celebration of Joy -->
+    <section id="sec-6" class="section">
+        <div class="content-box">
+            <h2 style="font-family: 'Montserrat'; letter-spacing: 5px; margin-bottom: 50px; font-size: 50px;">CELEBRATING YOU, DAD!</h2>
+            <div class="joy-wall">
+                <span class="joy-item" style="animation-delay: 0s">🏆</span>
+                <span class="joy-item" style="animation-delay: 0.2s">👔</span>
+                <span class="joy-item" style="animation-delay: 0.4s">🌟</span>
+                <span class="joy-item" style="animation-delay: 0.6s">💼</span>
+                <span class="joy-item" style="animation-delay: 0.8s">👑</span>
+                <span class="joy-item" style="animation-delay: 1s">🍻</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Final Tribute -->
+    <section id="sec-7" class="section">
+        <div class="content-box">
+            <h2 class="final-msg">The World's Best Dad</h2>
+            <p style="font-family: 'Montserrat'; font-size:40px; letter-spacing: 3px; margin-top: 30px; opacity: 0.8;">THANK YOU FOR EVERYTHING</p>
+        </div>
+    </section>
+
+    <script>
+        // --- Particle Background ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.4 - 0.2;
+                this.opacity = Math.random() * 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+                ctx.fill();
+            }
+        }
+        for(let i=0; i<100; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // --- Intersection Observer for Animations ---
+        const observerOptions = { threshold: 0.4 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+    </script>
+</body>
+</html>
